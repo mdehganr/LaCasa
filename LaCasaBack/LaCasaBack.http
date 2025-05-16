@@ -1,0 +1,6 @@
+@LaCasaBack_HostAddress = http://localhost:5114
+
+GET {{LaCasaBack_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

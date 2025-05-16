@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LaCasaBack")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e1c151af780a20ca34e9802fc6d25dfc6957248c")]
 [assembly: System.Reflection.AssemblyProductAttribute("LaCasaBack")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LaCasaBack")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

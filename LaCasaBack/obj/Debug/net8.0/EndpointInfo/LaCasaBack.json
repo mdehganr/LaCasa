@@ -103,6 +103,7 @@
           "employeeEmail",
           "endDate",
           "fullName",
+          "guest",
           "startDate"
         ],
         "type": "object",
@@ -115,9 +116,9 @@
             "minLength": 1,
             "type": "string"
           },
-          "guests": {
-            "type": "string",
-            "nullable": true
+          "guest": {
+            "minLength": 1,
+            "type": "string"
           },
           "employeeEmail": {
             "minLength": 1,

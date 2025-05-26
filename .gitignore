@@ -1,0 +1,51 @@
+# Ignore Visual Studio user-specific files
+.vs/
+**/.vs/
+
+# Ignore build outputs
+bin/
+obj/
+[Bb]uild/
+[Bb]uilds/
+
+# Ignore Rider IDE settings
+.idea/
+
+# Ignore user-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore other generated files
+*.log
+*.vspscc
+*.vssscc
+*.cache
+*.dbmdl
+*.bak
+*.orig
+*.rej
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.~*
+*.swp
+
+# Ignore test results
+TestResults/
+*.TestResults/
+*.trx
+
+# Ignore local NuGet packages
+*.nupkg
+.nuget/
+
+# Ignore publish output
+publish/
+out/
+
+# Ignore secrets
+secrets.json
+appsettings.Local.json

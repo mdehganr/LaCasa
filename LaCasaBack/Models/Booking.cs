@@ -10,7 +10,7 @@ namespace LaCasa.Models
         [Required]
         public string FullName { get; set; }
         [Required]
-        public string Guests { get; set; }
+        public string Guest { get; set; }
      
         [Required]
         public string EmployeeEmail { get; set; }

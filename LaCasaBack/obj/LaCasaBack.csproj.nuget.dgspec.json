@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/Users/redment/Projects/LaCasa/LaCasaBack/LaCasaBack.csproj": {}
+    "C:\\SoftwareProjects\\ProjectA\\LaCasa\\LaCasaBack\\LaCasaBack.csproj": {}
   },
   "projects": {
-    "/Users/redment/Projects/LaCasa/LaCasaBack/LaCasaBack.csproj": {
+    "C:\\SoftwareProjects\\ProjectA\\LaCasa\\LaCasaBack\\LaCasaBack.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/redment/Projects/LaCasa/LaCasaBack/LaCasaBack.csproj",
+        "projectUniqueName": "C:\\SoftwareProjects\\ProjectA\\LaCasa\\LaCasaBack\\LaCasaBack.csproj",
         "projectName": "LaCasaBack",
-        "projectPath": "/Users/redment/Projects/LaCasa/LaCasaBack/LaCasaBack.csproj",
-        "packagesPath": "/Users/redment/.nuget/packages/",
-        "outputPath": "/Users/redment/Projects/LaCasa/LaCasaBack/obj/",
+        "projectPath": "C:\\SoftwareProjects\\ProjectA\\LaCasa\\LaCasaBack\\LaCasaBack.csproj",
+        "packagesPath": "C:\\Users\\a-mdehghani\\.nuget\\packages\\",
+        "outputPath": "C:\\SoftwareProjects\\ProjectA\\LaCasa\\LaCasaBack\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/redment/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\a-mdehghani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -37,7 +44,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -85,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.408/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

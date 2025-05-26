@@ -7,7 +7,11 @@ namespace LaCasa.Models
     {
         [Key]
         public int Id { get; set; }
-
+        [Required]
+        public string FullName { get; set; }
+        [Required]
+        public string Guests { get; set; }
+     
         [Required]
         public string EmployeeEmail { get; set; }
 

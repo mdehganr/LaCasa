@@ -21,7 +21,7 @@ namespace LaCasa.Services
         public async Task<bool> CanBookAsync(Booking booking)
         {
             var existing = await _context.Bookings
-                .Where(b => b.EmployeeEmail == booking.EmployeeEmail && b.StartDate.Year == DateTime.Now.Year)
+                .Where(b => b.StartDate == DateTime.Now)
                 .FirstOrDefaultAsync();
 
             if (existing != null)

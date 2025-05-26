@@ -21,4 +21,10 @@ namespace LaCasa.Models
         [Required]
         public DateTime EndDate { get; set; }
     }
+    public class BookingEventDto
+    {
+        public string Type { get; set; } = string.Empty; // CREATE, UPDATE, DELETE
+        public Booking Booking { get; set; } = new();
+        public DateTime Timestamp { get; set; } = DateTime.UtcNow;
+    }
 }

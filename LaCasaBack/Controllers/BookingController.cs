@@ -20,7 +20,7 @@ namespace LaCasa.Controllers
         public async Task<IActionResult> Book([FromBody] Booking booking)
         {
             if (await _bookingService.CreateBookingAsync(booking))
-                return Ok("Booking successful.");
+                return Ok(booking);
 
             return BadRequest("Booking failed. Ensure no existing booking this year and max 2 days.");
         }

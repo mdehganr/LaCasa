@@ -6,18 +6,20 @@ using LaCasa.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using LaCasaBack.Sevices;
+using Microsoft.AspNetCore.Http;
 
 namespace LaCasa.Services
 {
-    public class BookingService
+    public class BookingService 
     {
         private readonly AppDbContext _context;
-
-        public BookingService(AppDbContext context)
+        private readonly IWebSocketManager _webSocketManager;
+        public BookingService(AppDbContext context, IWebSocketManager webSocketManager)
         {
             _context = context;
+            _webSocketManager = webSocketManager;
         }
-
         public async Task<bool> CanBookAsync(Booking booking)
         {
             var existing = await _context.Bookings
@@ -38,6 +40,11 @@ namespace LaCasa.Services
 
             _context.Bookings.Add(booking);
             await _context.SaveChangesAsync();
+            await _webSocketManager.BroadcastBookingEventAsync(new BookingEventDto
+            {
+                Type = "CREATE", // or "UPDATE"/"DELETE"
+                Booking = booking
+            });
             return true;
         }
 

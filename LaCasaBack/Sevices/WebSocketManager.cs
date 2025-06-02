@@ -11,7 +11,7 @@ namespace LaCasaBack.Sevices
         {
             Task AddConnectionAsync(WebSocket webSocket);
             Task RemoveConnectionAsync(WebSocket webSocket);
-            Task BroadcastBookingEventAsync(Booking bookingEvent);
+            Task BroadcastBookingEventAsync(BookingEventDto bookingEvent);
             Task HandleWebSocketAsync(WebSocket webSocket);
         }
 

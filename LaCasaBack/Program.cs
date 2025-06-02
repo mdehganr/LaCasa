@@ -1,3 +1,4 @@
+using LaCasaBack.Sevices;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,6 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<LaCasa.Data.AppDbContext>(opt => 
     opt.UseInMemoryDatabase("BookingDB"));
 builder.Services.AddScoped<LaCasa.Services.BookingService>();
+builder.Services.AddSingleton<IWebSocketManager, LaCasaBack.Sevices.WebSocketManager>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
@@ -19,6 +21,23 @@ builder.Services.AddCors(options =>
 });
 var app = builder.Build();
 app.UseCors("AllowAll");
+app.UseWebSockets();
+app.Map("/ws", async context =>
+{
+    if (context.WebSockets.IsWebSocketRequest)
+    {
+        var webSocket = await context.WebSockets.AcceptWebSocketAsync();
+        var manager = context.RequestServices.GetRequiredService<IWebSocketManager>();
+        await manager.AddConnectionAsync(webSocket);
+    }
+    else
+    {
+        context.Response.StatusCode = 400;
+    }
+});
+
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

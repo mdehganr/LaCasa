@@ -19,38 +19,56 @@ namespace LaCasa.Services
         {
             _context = context;
             _webSocketManager = webSocketManager;
-        }
-        public async Task<bool> CanBookAsync(Booking booking)
+        }   
+
+        public async Task<BookingValidationResult> CanBookAsync(Booking booking)
         {
             var existing = await _context.Bookings
-                .Where(b => b.StartDate == DateTime.Now)
+                .Where(b => b.StartDate == booking.StartDate && b.EndDate == booking.EndDate)
                 .FirstOrDefaultAsync();
 
-            if (existing != null)
-                return false;
+            //Here is the waitlist
+            if (booking.Waitlist == false) { 
 
-            var duration = (booking.EndDate - booking.StartDate).TotalDays;
-            return duration > 0 && duration <= 2;
+            if (existing != null)
+                return new BookingValidationResult(false, "These dates are already booked");
+            }
+            else
+            {
+                return new BookingValidationResult(true, "Your booking has been placed on the waitlist. Please wait for final confirmation.");
+            }
+
+
+                var duration = (booking.EndDate - booking.StartDate).TotalDays;
+            
+            if (duration <= 0)
+                return new BookingValidationResult(false, "End date must be after start date");
+                
+            if (duration > 2)
+                return new BookingValidationResult(false, "Booking duration cannot exceed 2 days");
+
+            return new BookingValidationResult(true, "Booking is available");
         }
 
-        public async Task<bool> CreateBookingAsync(Booking booking)
+        public async Task<BookingValidationResult> CreateBookingAsync(Booking booking)
         {
-            if (!await CanBookAsync(booking))
-                return false;
+            var validationResult = await CanBookAsync(booking);
+            if (!validationResult.IsValid)
+                return validationResult;
 
             _context.Bookings.Add(booking);
             await _context.SaveChangesAsync();
             await _webSocketManager.BroadcastBookingEventAsync(new BookingEventDto
             {
-                Type = "CREATE", // or "UPDATE"/"DELETE"
+                Type = "CREATE",
                 Booking = booking
             });
-            return true;
+            return new BookingValidationResult(true, "Booking created successfully");
         }
 
         public async Task<List<Booking>> GetAllBookingsAsync()
-{
-    return await _context.Bookings.ToListAsync();
-}
+        {
+            return await _context.Bookings.ToListAsync();
+        }
     }
 }

@@ -356,3 +356,8 @@ C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\bin\Debug\net8.0\runtimes\win\lib
 C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\bin\Debug\net8.0\Npgsql.dll
 C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

@@ -131,6 +131,10 @@
           "endDate": {
             "type": "string",
             "format": "date-time"
+          },
+          "waitlist": {
+            "type": "boolean",
+            "nullable": true
           }
         },
         "additionalProperties": false

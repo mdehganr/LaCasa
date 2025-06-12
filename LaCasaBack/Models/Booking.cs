@@ -20,6 +20,8 @@ namespace LaCasa.Models
 
         [Required]
         public DateTimeOffset EndDate { get; set; }
+
+        public bool? Waitlist { get; set; }
     }
     public class BookingEventDto
     {

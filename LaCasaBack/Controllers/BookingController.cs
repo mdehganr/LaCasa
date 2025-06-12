@@ -19,10 +19,11 @@ namespace LaCasa.Controllers
         [HttpPost]
         public async Task<IActionResult> Book([FromBody] Booking booking)
         {
-            if (await _bookingService.CreateBookingAsync(booking))
+            var validationResult = await _bookingService.CreateBookingAsync(booking);
+            if (validationResult.IsValid) // Assuming BookingValidationResult has an IsSuccess property
                 return Ok(booking);
 
-            return BadRequest("Booking failed. Ensure no existing booking this year and max 2 days.");
+            return BadRequest(validationResult.Message);
         }
 
         // GET api/booking

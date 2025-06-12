@@ -311,13 +311,6 @@ C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\obj\Debug\net8.0\scopedcss\bundle
 C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\obj\Debug\net8.0\staticwebassets.build.json
 C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\obj\Debug\net8.0\staticwebassets.development.json
 C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\obj\Debug\net8.0\staticwebassets\msbuild.LaCasaBack.Microsoft.AspNetCore.StaticWebAssets.props
-C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\obj\Debug\net8.0\staticwebassets\msbuild.LaCasaBack.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\obj\Debug\net8.0\staticwebassets\msbuild.build.LaCasaBack.props
-C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.LaCasaBack.props
-C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.LaCasaBack.props
-C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\obj\Debug\net8.0\staticwebassets.pack.json
-C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\obj\Debug\net8.0\LaCasaBack.csproj.Up2Date
 C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\obj\Debug\net8.0\LaCasaBack.dll
 C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\obj\Debug\net8.0\refint\LaCasaBack.dll
@@ -360,3 +353,6 @@ C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\bin\Debug\net8.0\runtimes\win\lib
 C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\bin\Debug\net8.0\Npgsql.dll
+C:\SoftwareProjects\ProjectA\LaCasa\LaCasaBack\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll

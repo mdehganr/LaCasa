@@ -6,8 +6,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
-builder.Services.AddDbContext<LaCasa.Data.AppDbContext>(opt => 
-    opt.UseInMemoryDatabase("BookingDB"));
+// Comment out in-memory database
+//builder.Services.AddDbContext<LaCasa.Data.AppDbContext>(opt => 
+//    opt.UseInMemoryDatabase("BookingDB"));
+// Add PostgreSQL instead
+builder.Services.AddDbContext<LaCasa.Data.AppDbContext>(opt =>
+    opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 builder.Services.AddScoped<LaCasa.Services.BookingService>();
 builder.Services.AddSingleton<IWebSocketManager, LaCasaBack.Sevices.WebSocketManager>();
 builder.Services.AddCors(options =>

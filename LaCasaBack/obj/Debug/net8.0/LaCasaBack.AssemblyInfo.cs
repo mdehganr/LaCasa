@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LaCasaBack")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8dc258693d8a17f25b33f268c27a49243854ce66")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ffa96fb85074349f0bd8b90b2d37d05d1c4e23d1")]
 [assembly: System.Reflection.AssemblyProductAttribute("LaCasaBack")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LaCasaBack")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

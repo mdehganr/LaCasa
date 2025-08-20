@@ -36,14 +36,13 @@ namespace LaCasa.Controllers
         }
 
         [HttpPut("{id}/status")]
-        public async Task<IActionResult> UpdateStatus(int id, [FromBody] BookingStatus status)
+        public async Task<IActionResult> UpdateStatus([FromRoute] int id, [FromBody] UpdateStatusRequest req)
         {
-            var result = await _bookingService.UpdateBookingStatusAsync(id, status);
-            if (result.IsValid)
-                return Ok();
-
-            return BadRequest(result.Message);
+            var result = await _bookingService.UpdateBookingStatusAsync(id, req.Status);
+            return result.IsValid ? Ok() : BadRequest(result.Message);
         }
+
+        public record UpdateStatusRequest(BookingStatus Status);
 
         [HttpGet("status/{status}")]
         public async Task<ActionResult<List<Booking>>> GetBookingsByStatus(BookingStatus status)

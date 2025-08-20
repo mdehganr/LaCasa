@@ -49,8 +49,8 @@
         "IsRequired": true
       },
       {
-        "Name": "status",
-        "Type": "System.String",
+        "Name": "req",
+        "Type": "LaCasa.Controllers.BookingController\u002BUpdateStatusRequest",
         "IsRequired": true
       }
     ],

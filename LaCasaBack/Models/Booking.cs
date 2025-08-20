@@ -7,10 +7,10 @@ namespace LaCasa.Models
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum BookingStatus
     {
-        Submitted,
-        Confirmed,
-        Waitlist,
-        Canceled
+        Submitted=0,
+        Confirmed=1,
+        Waitlisted=2,
+        Canceled=3
     }
 
     public class Booking
@@ -32,7 +32,7 @@ namespace LaCasa.Models
         public DateTimeOffset EndDate { get; set; }
 
         [Required]
-        public BookingStatus Status { get; set; } = BookingStatus.Submitted;
+        public BookingStatus Status { get; set; } 
     }
 
     public class BookingEventDto

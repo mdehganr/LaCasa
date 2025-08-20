@@ -28,7 +28,7 @@ namespace LaCasa.Services
                 .FirstOrDefaultAsync();
 
             //Here is the waitlist
-            if (booking.Status == BookingStatus.Waitlist) { 
+            if (booking.Status == BookingStatus.Waitlisted) { 
 
             if (existing != null)
                 return new BookingValidationResult(false, "These dates are already booked");

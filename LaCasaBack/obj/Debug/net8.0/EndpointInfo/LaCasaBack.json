@@ -92,17 +92,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/BookingStatus"
+                "$ref": "#/components/schemas/UpdateStatusRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/BookingStatus"
+                "$ref": "#/components/schemas/UpdateStatusRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/BookingStatus"
+                "$ref": "#/components/schemas/UpdateStatusRequest"
               }
             }
           }
@@ -207,11 +207,11 @@
             "minLength": 1,
             "type": "string"
           },
-          "guest": {
+          "employeeEmail": {
             "minLength": 1,
             "type": "string"
           },
-          "employeeEmail": {
+          "guest": {
             "minLength": 1,
             "type": "string"
           },
@@ -233,10 +233,19 @@
         "enum": [
           "Submitted",
           "Confirmed",
-          "Waitlist",
+          "Waitlisted",
           "Canceled"
         ],
         "type": "string"
+      },
+      "UpdateStatusRequest": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/BookingStatus"
+          }
+        },
+        "additionalProperties": false
       },
       "WeatherForecast": {
         "type": "object",

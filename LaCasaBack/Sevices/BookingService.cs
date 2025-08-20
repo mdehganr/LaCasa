@@ -28,7 +28,7 @@ namespace LaCasa.Services
                 .FirstOrDefaultAsync();
 
             //Here is the waitlist
-            if (booking.Waitlist == false) { 
+            if (booking.Status == BookingStatus.Waitlist) { 
 
             if (existing != null)
                 return new BookingValidationResult(false, "These dates are already booked");
@@ -37,7 +37,6 @@ namespace LaCasa.Services
             {
                 return new BookingValidationResult(true, "Your booking has been placed on the waitlist. Please wait for final confirmation.");
             }
-
 
                 var duration = (booking.EndDate - booking.StartDate).TotalDays;
             
@@ -66,9 +65,31 @@ namespace LaCasa.Services
             return new BookingValidationResult(true, "Booking created successfully");
         }
 
+        public async Task<BookingValidationResult> UpdateBookingStatusAsync(int id, BookingStatus status)
+        {
+            var booking = await _context.Bookings.FindAsync(id);
+            if (booking == null)
+                return new BookingValidationResult(false, "Booking not found");
+            booking.Status = status;
+            _context.Bookings.Update(booking);
+            await _context.SaveChangesAsync();
+            await _webSocketManager.BroadcastBookingEventAsync(new BookingEventDto
+            {
+                Type = "UPDATE",
+                Booking = booking
+            });
+            return new BookingValidationResult(true, "Booking status updated successfully");
+        }
         public async Task<List<Booking>> GetAllBookingsAsync()
         {
             return await _context.Bookings.ToListAsync();
+        }
+
+        public async Task<List<Booking>> GetBookingsByStatusAsync(BookingStatus status)
+        {
+            return await _context.Bookings
+                .Where(b => b.Status == status)
+                .ToListAsync();
         }
     }
 }

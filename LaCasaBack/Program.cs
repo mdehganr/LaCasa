@@ -1,11 +1,16 @@
 using LaCasaBack.Sevices;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
 // Comment out in-memory database
 //builder.Services.AddDbContext<LaCasa.Data.AppDbContext>(opt => 
 //    opt.UseInMemoryDatabase("BookingDB"));
@@ -41,9 +46,6 @@ app.Map("/ws", async context =>
     }
 });
 
-
-
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -73,13 +75,8 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast")
 .WithOpenApi();
 
-
-
-
-
 app.MapControllers();
 app.Run();
-
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {

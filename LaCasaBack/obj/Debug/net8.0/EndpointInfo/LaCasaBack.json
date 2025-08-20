@@ -72,6 +72,96 @@
         }
       }
     },
+    "/api/Booking/{id}/status": {
+      "put": {
+        "tags": [
+          "Booking"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookingStatus"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookingStatus"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookingStatus"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Booking/status/{status}": {
+      "get": {
+        "tags": [
+          "Booking"
+        ],
+        "parameters": [
+          {
+            "name": "status",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/BookingStatus"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Booking"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Booking"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Booking"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/weatherforecast": {
       "get": {
         "tags": [
@@ -104,7 +194,8 @@
           "endDate",
           "fullName",
           "guest",
-          "startDate"
+          "startDate",
+          "status"
         ],
         "type": "object",
         "properties": {
@@ -132,12 +223,20 @@
             "type": "string",
             "format": "date-time"
           },
-          "waitlist": {
-            "type": "boolean",
-            "nullable": true
+          "status": {
+            "$ref": "#/components/schemas/BookingStatus"
           }
         },
         "additionalProperties": false
+      },
+      "BookingStatus": {
+        "enum": [
+          "Submitted",
+          "Confirmed",
+          "Waitlist",
+          "Canceled"
+        ],
+        "type": "string"
       },
       "WeatherForecast": {
         "type": "object",

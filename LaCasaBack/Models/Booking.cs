@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Reflection.Metadata.Ecma335;
 using System.Text.Json.Serialization;
 
 namespace LaCasa.Models
@@ -19,7 +20,9 @@ namespace LaCasa.Models
         public int Id { get; set; }
         [Required]
         public string FullName { get; set; }
-     
+
+        public DateTime CreatedDateTime { get; set; } = DateTime.UtcNow;
+
         [Required]
         public string EmployeeEmail { get; set; }
         [Required]

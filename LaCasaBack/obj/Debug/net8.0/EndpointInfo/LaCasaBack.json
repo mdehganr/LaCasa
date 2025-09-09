@@ -207,6 +207,10 @@
             "minLength": 1,
             "type": "string"
           },
+          "createdDateTime": {
+            "type": "string",
+            "format": "date-time"
+          },
           "employeeEmail": {
             "minLength": 1,
             "type": "string"
